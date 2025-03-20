@@ -17,6 +17,16 @@
     { device = "/dev/disk/by-uuid/b29e24c3-9796-4713-8adb-56e205cf61e8";
       fsType = "ext4";
     };
+  
+  fileSystems."/yosemite" =
+    { device = "/dev/disk/by-uuid/d1f919a5-1823-48b9-81d9-998a3c0f8764";
+      fsType = "ext4";
+    };
+
+  fileSystems."/monument_valley" =
+    { device = "/dev/disk/by-uuid/50ECB6C9ECB6A91C";
+      fsType = "ntfs3";
+    };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/1097-074F";
