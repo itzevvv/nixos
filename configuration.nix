@@ -140,6 +140,7 @@
      rsync
      keepassxc
      git
+     git-lfs
      github-desktop
      gparted
      qbittorrent
