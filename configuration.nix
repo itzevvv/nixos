@@ -62,6 +62,24 @@
   # Enable tailscale
   services.tailscale.enable = true;
 
+  # Enable mullvad
+  services.mullvad-vpn.enable = true;
+
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
+
+  networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = [ "~." ];
+    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    dnsovertls = "true";
+  };
+
+
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -119,8 +137,9 @@
      git
      github-desktop
      gparted
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+     qbittorrent
+     vim
+     wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
