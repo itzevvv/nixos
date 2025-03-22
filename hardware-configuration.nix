@@ -21,11 +21,13 @@
   fileSystems."/yosemite" =
     { device = "/dev/disk/by-uuid/d1f919a5-1823-48b9-81d9-998a3c0f8764";
       fsType = "ext4";
+      options = [ "nofail" ];
     };
 
   fileSystems."/monument_valley" =
     { device = "/dev/disk/by-uuid/50ECB6C9ECB6A91C";
       fsType = "ntfs3";
+      options = [ "nofail" ];
     };
 
   fileSystems."/boot" =
