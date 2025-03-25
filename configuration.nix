@@ -11,6 +11,8 @@
       ./modules/nvidia.nix
     ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -147,6 +149,7 @@
      vim
      wget
      ntfs3g
+     cargo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

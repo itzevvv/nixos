@@ -24,7 +24,7 @@
       options = [ "nofail" ];
     };
 
-  fileSystems."/monument_valley" =
+  fileSystems."/monument-valley" =
     { device = "/dev/disk/by-uuid/50ECB6C9ECB6A91C";
       fsType = "ntfs3";
       options = [ "nofail" ];
