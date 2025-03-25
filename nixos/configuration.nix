@@ -131,8 +131,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      fastfetch
-     discord #.override { withMoonlight = true; }
-     #(pkgs.discord.override { withMoonlight = true; })
+     (discord.override {
+       withOpenASAR = true;
+       withMoonlight = true;
+     })
      jdk17
      prismlauncher
      vlc
