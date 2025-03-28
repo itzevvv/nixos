@@ -59,6 +59,12 @@
     variant = "";
   };
 
+  # Enable docker
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   # Bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -152,6 +158,9 @@
      wget
      ntfs3g
      cargo
+     godot-mono
+     drawpile
+     obs-studio
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
