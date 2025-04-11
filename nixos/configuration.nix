@@ -116,13 +116,30 @@
   users.users.evelyn = {
     isNormalUser = true;
     description = "Evelyn";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     packages = with pkgs; [
       kdePackages.kate
-      
+      prismlauncher
+      (discord.override {
+        withOpenASAR = true;
+        withMoonlight = true;
+      })
+      wineWowPackages.stable # Wine w/32bit and 64bit support
+      vlc
+      keepassxc
+      github-desktop
+      gparted
+      qbittorrent
+      godot-mono
+      drawpile
+      obs-studio
+      spotify
+      handbrake
     #  thunderbird
     ];
   };
+
+  programs.adb.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -137,30 +154,16 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      fastfetch
-     (discord.override {
-       withOpenASAR = true;
-       withMoonlight = true;
-     })
      jdk17
-     prismlauncher
-     vlc
-     wine64
      unzip
      lshw
      rsync
-     keepassxc
      git
      git-lfs
-     github-desktop
-     gparted
-     qbittorrent
      vim
      wget
      ntfs3g
      cargo
-     godot-mono
-     drawpile
-     obs-studio
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
